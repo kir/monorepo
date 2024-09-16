@@ -20,7 +20,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="General_ConditionalBuildChain_Monorepo" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <artifact-dependencies>
