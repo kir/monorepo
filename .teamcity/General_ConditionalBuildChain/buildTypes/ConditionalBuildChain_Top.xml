@@ -9,7 +9,7 @@
     </options>
     <parameters>
       <param name="core_artifact_rules" value="?:core.jar" />
-      <param name="teamcity.build.chain.onlyTags" value="General_ConditionalBuildChain_Plugin1" />
+      <param name="teamcity.build.chain.onlyTags" value="General_ConditionalBuildChain_Plugin1, General_ConditionalBuildChain_CoreCompile" />
     </parameters>
     <build-runners>
       <runner id="simpleRunner" name="" type="simpleRunner">
