@@ -7,7 +7,7 @@
   <param name="branch" value="main" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="+:*" />
+  <param name="teamcity:branchSpec" value="+:refs/heads/(*)" />
   <param name="url" value="git@github.com:kir/monorepo.git" />
   <param name="useAlternates" value="AUTO" />
   <param name="usernameStyle" value="USERID" />
