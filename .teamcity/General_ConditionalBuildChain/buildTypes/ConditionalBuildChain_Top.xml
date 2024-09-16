@@ -23,7 +23,22 @@
       <vcs-entry-ref root-id="General_ConditionalBuildChain_Monorepo" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_5" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="triggerRules"><![CDATA[+:parent-project/plugin1/**
++:parent-project/core/**]]></param>
+        </parameters>
+        <build-customization>
+          <parameters>
+            <param name="teamcity.build.chain.skipTags" value="General_ConditionalBuildChain_Plugin2" />
+          </parameters>
+        </build-customization>
+      </build-trigger>
+    </build-triggers>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="General_ConditionalBuildChain_CoreCompile" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
