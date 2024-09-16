@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="868f47c0-6938-421f-a8d3-f731f22ed605" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>BuildDist - Top</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*" />
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters>
+      <param name="core_artifact_rules" value="?:core.jar" />
+    </parameters>
+    <build-runners>
+      <runner id="simpleRunner" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="ls -lR" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="General_ConditionalBuildChain_CoreCompile" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="%core_artifact_rules%" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_6" sourceBuildTypeId="General_ConditionalBuildChain_CoreTests" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="core_tests.jar" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_7" sourceBuildTypeId="General_ConditionalBuildChain_Plugin1Tests" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="plugin1_tests.jar" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_8" sourceBuildTypeId="General_ConditionalBuildChain_Plugin2Tests" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="plugin2_tests.jar" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="General_ConditionalBuildChain_Plugin1">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="General_ConditionalBuildChain_CoreCompile">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="General_ConditionalBuildChain_CoreTests">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="General_ConditionalBuildChain_Plugin2">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

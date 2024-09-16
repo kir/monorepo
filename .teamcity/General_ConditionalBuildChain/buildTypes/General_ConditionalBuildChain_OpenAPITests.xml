@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9fe7f52e-7d32-449b-9ca9-2e17001c31ef" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>OpenAPI Tests</name>
+  <description />
+  <settings>
+    <parameters>
+      <param name="teamcity.configuration.tags" value="tests" />
+    </parameters>
+    <build-runners />
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="General_ConditionalBuildChain_OpenAPICompile">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+

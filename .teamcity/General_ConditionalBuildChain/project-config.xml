@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="General" uuid="e309303e-d065-4f99-997f-8fc7e904cd46" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Conditional Build Chain</name>
+  <parameters />
+  <project-extensions>
+    <extension id="KEEP_RULE_1" type="keepRules">
+      <parameters>
+        <param name="keepData.1.type" value="everything" />
+        <param name="limit.buildsCount" value="1" />
+        <param name="limit.type" value="lastNBuilds" />
+        <param name="preserveArtifacts" value="true" />
+        <param name="ruleDisabled" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_4" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="rootId" value="General_ConditionalBuildChain_Monorepo" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup>
+    <options>
+      <option name="disableCleanupPolicies" value="true" />
+    </options>
+  </cleanup>
+</project>
+
