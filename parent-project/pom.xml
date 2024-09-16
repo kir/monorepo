@@ -26,11 +26,11 @@
     </dependencies>
   </dependencyManagement>
 
-<modules>
+  <modules>
     <module>core</module>
     <module>plugin1</module>
     <module>plugin2</module>
-</modules>
+  </modules>
 
   <dependencies>
     <dependency>
