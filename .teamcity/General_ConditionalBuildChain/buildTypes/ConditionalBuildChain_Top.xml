@@ -38,6 +38,18 @@
           </parameters>
         </build-customization>
       </build-trigger>
+      <build-trigger id="TRIGGER_6" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+        <build-customization>
+          <parameters>
+            <param name="teamcity.build.chain.skipTags" value="General_ConditionalBuildChain_Plugin1" />
+          </parameters>
+        </build-customization>
+      </build-trigger>
     </build-triggers>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="General_ConditionalBuildChain_CoreCompile" cleanDestination="false">
