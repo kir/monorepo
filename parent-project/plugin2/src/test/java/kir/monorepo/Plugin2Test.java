@@ -14,6 +14,8 @@ public class Plugin2Test {
      */
     @Test
     public void shouldAnswerWithTrue() {
-        assertTrue(true);
+
+        assertTrue(false);
+
     }
 }
