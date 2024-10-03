@@ -15,6 +15,6 @@ public class Plugin2Test {
     @Test
     public void shouldAnswerWithTrue() {
         assertTrue(false);
-        // a change in plugin 3
+        // a change in plugin 4
     }
 }
