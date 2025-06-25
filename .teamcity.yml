@@ -1,6 +1,6 @@
 jobs:
   Job1:
-    name: Job 1
+    name: Job 2
     steps:
       - type: script
         script-content: ls -lR
