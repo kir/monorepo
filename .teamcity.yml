@@ -1,4 +1,6 @@
 jobs:
   Job1:
-    name: Job 1
-    steps: []
+    name: Job 45
+    steps:
+      - type: script
+        script-content: ls -lR
