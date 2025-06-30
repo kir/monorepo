@@ -1,6 +1,8 @@
 jobs:
   Job1:
-    name: Job 46
+    name: Job 50
     steps:
       - type: script
-        script-content: ls -lR
+        script-content: "echo \"AAAAA\" && ls -lR"
+
+
