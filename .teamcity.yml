@@ -1,6 +1,10 @@
+dependencies:
+  - General_PipelineDependenciesDemo_P3:
+      on-failed-dependency: mark-as-failed-to-start
+
 jobs:
   Job1:
-    name: Job 62
+    name: Job 63
     steps:
       - type: script
         script-content: ls -lR
